@@ -120,10 +120,17 @@ nav a:hover { color: var(--momoiro-dark); }
 .hero::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 250, 240, 0.3);
-    backdrop-filter: blur(2px);
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, /* グラデーションの方向を下向きに */
+        rgba(255, 255, 255, 0.8), /* 始点（上部）：濃い白（20%透明、ヘッダー背景用） */
+        rgba(255, 255, 255, 0.1), /* 中間点：薄い白 */
+        rgba(255, 255, 255, 0)    /* 終点（下部）：完全に透明 */
+    );
+    z-index: 1;
 }
 
 .hero-content {
@@ -209,10 +216,13 @@ section {
 }
 .fruit-card:hover { transform: translateY(-5px); }
 
-.fruit-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    display: block;
+.fruit-icon-img {
+    width: 80px; /* アイコンの幅を調整 */
+    height: auto; /* 高さは自動調整 */
+    margin-bottom: 1rem; /* 必要に応じて下部の余白を調整 */
+    display: block; /* 中央寄せのためにブロック要素に */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
 }
 
 .harvest-month {
